@@ -41,7 +41,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
     function ($scope, $resource, $routeParams, cityService) {
 
         $scope.city = cityService.city;
-        $scope.days = $routeParams.days || 2; // default to 2
+        $scope.days = $routeParams.days || '2'; // default to 2
 
         // make api call. doing it this way will also prevent the CORS errors.
         // example: http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=2&APPID=2a76523ae46789c184a204e0d5ec5101
