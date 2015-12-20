@@ -1,0 +1,12 @@
+12/20/15
+
+for weather service api
+
+Use
+http://openweathermap.org/appid
+
+API
+http://api.openweathermap.org/data/2.5/forecast/daily?APPID=2a76523ae46789c184a204e0d5ec5101
+
+Example of API call (works if you copy in browser):
+http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=2&APPID=2a76523ae46789c184a204e0d5ec5101
