@@ -33,8 +33,6 @@ weatherApp.controller('homeController', ['$scope', 'cityService',
         $scope.$watch('city', function () {
             cityService.city = $scope.city;
         });
-
-
     }]);
 
 weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService',
@@ -63,13 +61,27 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
             }
         );
 
-        $scope.convertToF = function(degK) {
+        $scope.convertToF = function (degK) {
             return Math.round(1.8 * (degK - 273) + 32);
         };
 
-        $scope.convertToDate = function(dt) {
+        $scope.convertToDate = function (dt) {
             return new Date(dt * 1000);
         };
-
-
     }]);
+
+// Directives
+weatherApp.directive('weatherReport', function() {
+    return {
+        restrict: 'E', // HTML element
+        templateUrl: 'directives/weatherReport.html',
+        replace: true,
+        // isolate the scope
+        scope: {
+            weatherDay: '=', // object
+            convertToStandard: '&', // function
+            convertToDate: '&', // function
+            dateFormat: '@' // text
+        }
+    }
+});
