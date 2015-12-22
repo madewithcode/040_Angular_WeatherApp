@@ -1,19 +1,6 @@
-// Controllers
-weatherApp.controller('homeController', ['$scope', '$location', 'cityService',
-    function ($scope, $location, cityService) {
+// forecastController
 
-        $scope.city = cityService.city;
 
-        // watch the value for 'city' as it may change on the home page (text box)
-        $scope.$watch('city', function () {
-            cityService.city = $scope.city;
-        });
-
-        $scope.submit = function() {
-            $location.path('/forecast');
-        }
-        ;
-    }]);
 
 weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParams', 'cityService',
     function ($scope, $resource, $routeParams, cityService) {
