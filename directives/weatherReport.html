@@ -1,3 +1,21 @@
+<!--
+       forecast.htm calls weatherReport.html directive
+       helpful: start at weatherReport.html,
+       and go counter clockwise to reach forecastController.js
+
+       forecast.htm         |       weatherReport.html
+       -----------------------------------------------
+       weather-day          ->      weatherDay
+       convert-to-standard  ->      convertToStandard
+       convert-to-date      ->      convertToDate
+       date-format          ->      dateFormat
+
+
+       forecast.htm         |       forecastController.js
+       -----------------------------------------------
+       convert-to-standard  ->      convertToF(..)
+       convert-to-date      ->      convertToDate(..)
+-->
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">{{ convertToDate({dt: weatherDay.dt}) | date: dateFormat }}</h3>
